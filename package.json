@@ -1,0 +1,25 @@
+{
+  "name": "coffeeshop",
+  "version": "1.0.0",
+  "description": "Coffee Shop backend API",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "keywords": [],
+  "author": "Amin",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "coffeeshop": "file:",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.2",
+    "mysql2": "^3.9.4",
+    "node-telegram-bot-api": "^0.63.0",
+    "nodemon": "^3.1.10"
+  }
+}
