@@ -6,8 +6,6 @@ import { getAdminByLogin, createAdmin } from '../models/adminModel.js';
 const router = express.Router();
 const JWT_SECRET = 'your-secret-key';
 
-
-
 // Логин администратора
 router.post('/login', async (req, res) => {
   const { login, password } = req.body;
