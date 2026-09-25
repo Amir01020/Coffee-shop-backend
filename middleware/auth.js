@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-const JWT_SECRET = 'your-secret-key';
+import { JWT_SECRET } from '../config.js';
 
 const auth = (req, res, next) => {
   const token = req.headers.authorization?.split(' ')[1];

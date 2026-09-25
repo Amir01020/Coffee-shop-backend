@@ -2,9 +2,10 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { getAdminByLogin, createAdmin } from '../models/adminModel.js';
+import { JWT_SECRET } from '../config.js';
+import auth from '../middleware/auth.js';
 
 const router = express.Router();
-const JWT_SECRET = 'your-secret-key';
 
 // Логин администратора
 router.post('/login', async (req, res) => {
@@ -26,8 +27,8 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// Создание администратора (только для разработки/админки)
-router.post('/register', async (req, res) => {
+// Создание администратора. Только для уже авторизованного админа.
+router.post('/register', auth, async (req, res) => {
   const { login, password } = req.body;
 
   try {
